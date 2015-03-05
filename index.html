@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>MU Demo</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <canvas id="mu_canvas"></canvas>
+        <div id="mu_status_bar"></div>
+        <script>
+            var statusBar = document.getElementById('mu_status_bar');
+            var Module = {
+                print: function (text) {
+                    console.log(text);
+                },
+                printErr: function (text) {
+                    console.warn(text);
+                },
+                canvas: document.getElementById('mu_canvas'),
+                setStatus: function (text) {
+                    if (text === Module.setStatus.text || text.length === 0)
+                        return;
+                    Module.print('Status: ' + text);
+                }
+            };
+            Module.setStatus('Downloading...');
+        </script>
+        <script src="mu.js"></script>
+    </body>
+</html>
